@@ -1,12 +1,12 @@
-#include "lists.h"
+#include "monty.h"
 /**
 *free_dlistint - frees a dlistint_t list.
 *@head: Head pointer to list to be freed
 *Return: Nothing
 */
-void free_dlistint(dlistint_t *head)
+void free_stack(stack_t *head)
 {
-	dlistint_t *f_h;
+	stack_t *f_h;
 
 	if (!head)
 		return;
