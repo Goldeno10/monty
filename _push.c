@@ -6,12 +6,12 @@
 *Return: the address of the new element, or NULL if it failed
 */
 
-dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
+stack_t *_push(stack_t **head, int n)
 {
-	dlistint_t *current, *new;
+	stack_t *current, *new;
 
 	current = *head;
-	new = malloc(sizeof(dlistint_t));
+	new = malloc(sizeof(stack_t));
 	if (!new)
 		return (NULL);
 
@@ -30,7 +30,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	}
 	else
 	{
-		*head = new;/* if head node point to null l, the point it to new node*/
+		*head = new;/* if head node point to null l, then point it to new node*/
 	}
 	return (new);
 }
