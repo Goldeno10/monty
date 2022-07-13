@@ -22,9 +22,33 @@ void _file_op(FILE *filename)
 	{
 		line_num++;
 		//function to take lineptr goes here
-		/* goto next line */
+		tokenizer(lineptr, linenumber)	/* goto next line */
 		nread = getline(&lineptr, &n, stream);
 	}
 	free(lineptr);
 	fclose(stream);
 }
+
+int tokenizer(char *lineptr, line_number )
+{
+	char *opcode;
+	char *value:
+	int data;
+	opcode = strtok(lineptr," ");
+	if (opcode == NULL)
+		return (1);
+	value = strtok(NULL, " ")
+	if (isdigit(value))
+	{
+		data = atoi(value);
+	}
+	else:
+	{
+		perror("L%i: usage: push integer", line_number);
+		exit(EXITFAILURE);
+	}
+	void (*get_opcode(char *format))(stack_t **stack, line_number)/* get opcode function goes here */
+	return (0);
+}
+
+
