@@ -44,7 +44,7 @@ extern stack_t *head;
 extern char *arg;
 char *_strdup(char *s);
 void (*get_opcode(char *opcode))(stack_t **stack, unsigned int line_num);
-char **tokenizer(char *line);
+char **_tokenize(char *line, char **arr);
 int _len(char **token);
 stack_t *create_node(int n);
 /* opcode_instructuions*/

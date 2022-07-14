@@ -6,9 +6,9 @@ void _file_op(char *filename)
 {
 	void (*f)(stack_t **stack, unsigned int line_number);
 	char *lineptr = NULL;/* line Buffer */
-	size_t n = 0; /*line buffer size */
+	size_t n = 1024; /*line buffer size */
 	int file_status, line_num = 0;
-	char **tokens = NULL;
+	char **tokens = {NULL};
 	ssize_t nread;
 	FILE *stream;
 
@@ -25,7 +25,7 @@ void _file_op(char *filename)
 	while (nread != -1)
 	{
 		line_num++;
-		tokens = tokenizer(lineptr);
+		_tokenize(lineptr, tokens);
 		f = get_opcode(tokens[0]);/*function to work on tokens goes here*/
 		if (!f)
 			err(3, line_num, tokens[0]);

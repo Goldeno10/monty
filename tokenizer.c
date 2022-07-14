@@ -6,47 +6,18 @@
 *
 * Return: array of strings
 */
-char **tokenizer(char *line)
+char **_tokenize(char *line, char **arr)
 {
-	char *buf = NULL, *bufp = NULL, *token = NULL, *delim = " :\t\r\n";
-	char **tokens = NULL;
-	int tokensize = 1;
-	size_t index = 0, flag = 0;
+	int i = 0;
+	char *p = strtok(line, " ");
 
-	buf = _strdup(line);
-	if (!buf)
-		return (NULL);
-	bufp = buf;
-
-	while (*bufp)
+	while (p != NULL)
 	{
-		if (strchr(delim, *bufp) != NULL && flag == 0)
-		{
-			tokensize++;
-			flag = 1;
-		}
-		else if (strchr(delim, *bufp) == NULL && flag == 1)
-			flag = 0;
-		bufp++;
+		arr[i++] = p;
+		p = strtok(NULL, " ");
 	}
-	tokens = malloc(sizeof(char *) * (tokensize + 1));
-	token = strtok(buf, delim);
-	while (token)
-	{
-		tokens[index] = _strdup(token);
-		if (tokens[index] == NULL)
-		{
-			free(tokens);
-			return (NULL);
-		}
-		token = strtok(NULL, delim);
-		index++;
-	}
-	tokens[index] = NULL;
-	free(buf);
-	return (tokens);
+	return (arr);
 }
-
 /**
 * _strdup - dupicates string
 * @s: to be duplicated
