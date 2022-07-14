@@ -1,11 +1,12 @@
 #include "monty.h"
 
 stack_t *head = NULL;
+
 int main(int argc, char **argv)
 {
 	if (argc < 2 || argc > 2)
-		_error(1);
-	file_op(argv[1]);
+		err(1);
+	_file_op(argv[1]);
 	free_stack(head);
 	return (0);
 }

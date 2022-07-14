@@ -1,4 +1,4 @@
-#include "lists.h"
+#include "monty.h"
 /**
 *add_dnodeint_end - adds a new node at the end of a dlistint_t list.
 *@head: Pointer to head of list
@@ -6,7 +6,7 @@
 *Return: the address of the new element, or NULL if it failed
 */
 
-stack_t *_push(stack_t **head, int n)
+stack_t *add_dnodeint_end(stack_t **head, int n)
 {
 	stack_t *current, *new;
 

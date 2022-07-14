@@ -5,7 +5,7 @@
 *Return: Number ofnodes
 */
 
-size_t _pall(stack_t *h)
+size_t print_dlistint(stack_t *h)
 {
 	stack_t *current;
 	size_t n;
