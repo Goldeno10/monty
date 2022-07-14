@@ -6,6 +6,7 @@ void (*get_opcode(char *opcode))(stack_t **stack, unsigned int line_number)
 	instruction_t ops[] ={
 		{"push", _push},
 		{"pall", _pall},
+		{"pint", _pint},
 		{NULL, NULL}
 	};
 	while (ops[i].opcode)

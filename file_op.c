@@ -1,14 +1,13 @@
 #include "monty.h"
-#include <stdio.h>
-#include <stdlib.h>
-char *arg = NULL;
+stack_t *head = NULL;
+char *arg;
 void _file_op(char *filename)
 {
 	void (*f)(stack_t **stack, unsigned int line_number);
 	char *lineptr = NULL;/* line Buffer */
 	size_t n = 1024; /*line buffer size */
 	int file_status, line_num = 0;
-	char **tokens = {NULL};
+	char *tokens[3024];
 	ssize_t nread;
 	FILE *stream;
 
@@ -20,13 +19,14 @@ void _file_op(char *filename)
 	stream = fopen(filename, "r");
 	if (stream == NULL)
 		err(2, filename);
+
 	/*read fist line */
 	nread = getline(&lineptr, &n, stream);
 	while (nread != -1)
 	{
 		line_num++;
 		_tokenize(lineptr, tokens);
-		f = get_opcode(tokens[0]);/*function to work on tokens goes here*/
+		f = get_opcode(tokens[0]);
 		if (!f)
 			err(3, line_num, tokens[0]);
 		arg = tokens[1];
@@ -38,13 +38,4 @@ void _file_op(char *filename)
 	fclose(stream);
 }
 
-
-int _len(char **token)
-{
-	int i = 0;
-
-	while (token[i])
-		i++;
-	return (i);
-}
 

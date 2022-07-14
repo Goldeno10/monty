@@ -46,3 +46,20 @@ void _pall(stack_t **stack, unsigned int line_num)
 	curr = *stack;
 	print_dlistint(curr);
 }
+
+/**
+ * _pint - prints the value at the top of the stack
+ *
+ * @doubly: head of the linked list
+ * @cline: line number
+ * Return: no return
+ */
+void _pint(stack_t **stack, unsigned int line_num)
+{
+	(void)line_num;
+
+	if (*stack == NULL)
+		more_err(6, line_num);
+
+	printf("%d\n", (*stack)->n);
+}

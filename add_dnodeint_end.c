@@ -13,8 +13,7 @@ stack_t *add_dnodeint_end(stack_t **head, int n)
 	current = *head;
 	new = malloc(sizeof(stack_t));
 	if (!new)
-		return (NULL);
-
+		err(4);
 	new->n = n;
 	new->next = NULL;
 	/* navigating to the end node if node is not null*/

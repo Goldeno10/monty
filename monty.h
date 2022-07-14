@@ -1,13 +1,9 @@
 #ifndef _MONTY_H
 #define _MONTY_H
-
+#define  _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <ctype.h>
 #include <stdarg.h>
 #include <string.h>
 /**
@@ -63,4 +59,5 @@ void free_stack(stack_t *head);
 void _file_op(char *filename);
 /* Errors */
 void err(int error_code, ...);
+void more_err(int error_code, ...);
 #endif /* #endif _MONTY_H */
