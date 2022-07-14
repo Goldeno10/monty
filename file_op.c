@@ -6,23 +6,25 @@ void _file_op(FILE *filename)
 {
 	char *lineptr = NULL;/* line Buffer */
 	size_t n = 0; /*line buffer size */
-	int line_num = 0;
+	int file_status, line_num = 0;
+	char **tokens = NULL;
 	ssize_t line_size, nread;
 	FILE *stream;
+	file_status = access(filename, R_OK);
+	if (file_status == -1)
+		err(2, filename);
 	/* open file */
 	stream = fopen(filename, "r");
 	if (stream == NULL)
-	{
-		perror("Error: Can't open file %s", filename);
-		exit(EXIT_FAILURE);
-	}
+		err(2, filename);
 
 	nread = getline(&lineptr, &n, stream);
 	while (nread != -1)
 	{
 		line_num++;
-		//function to take lineptr goes here
-		tokenizer(lineptr, linenumber)	/* goto next line */
+		tokens = tokenizer(lineptr)
+		/*function to work on tokens goes here*/
+		/* goto nextline*/
 		nread = getline(&lineptr, &n, stream);
 	}
 	free(lineptr);
@@ -47,8 +49,16 @@ int tokenizer(char *lineptr, line_number )
 		perror("L%i: usage: push integer", line_number);
 		exit(EXITFAILURE);
 	}
-	void (*get_opcode(char *format))(stack_t **stack, line_number)/* get opcode function goes here */
+	 (*get_opcode(char *format))(stack_t **stack, line_number)/* get opcode function goes here */
 	return (0);
 }
 
 
+int _len(char **token)
+{
+	int i = 0;
+
+	while (token[i])
+		i++;
+	return (i);
+}
