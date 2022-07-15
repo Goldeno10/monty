@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include <string.h>
+#include <ctype.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -57,7 +58,5 @@ void free_stack(stack_t *head);
 
 /* file op functions */
 void _file_op(char *filename);
-/* Errors */
-void err(int error_code, ...);
-void more_err(int error_code, ...);
+
 #endif /* #endif _MONTY_H */
