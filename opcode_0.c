@@ -121,7 +121,7 @@ void _pop(stack_t **stack, unsigned int line_num)
   * @stack: head node of linked list
   * @line_num: line number
   */
-void swap(stack_t **stack, unsigned int line_num)
+void _swap(stack_t **stack, unsigned int line_num)
 {
 	int x = (*stack)->n;
 
