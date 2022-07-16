@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
-  * add - Adds the top two elements of the stack
-  * @stack: Head pointer to a  doubly linked list
-  * @line_num: line number
+  *add - Adds the top two elements of the stack
+  *@stack: Head pointer to a  doubly linked list
+  *@line_num: line number
   */
 void add(stack_t **stack, unsigned int line_num)
 {
@@ -17,9 +17,9 @@ void add(stack_t **stack, unsigned int line_num)
 	pop(stack, line_num);
 }
 /**
- * sub - Subtracts the top two elements of the stack
- * @stack: Head pointer to a doubly linked list
- * @line_num: line number
+ *sub - Subtracts the top two elements of the stack
+ *@stack: Head pointer to a doubly linked list
+ *@line_num: line number
  */
 void sub(stack_t **stack, unsigned int line_num)
 {
@@ -33,9 +33,9 @@ void sub(stack_t **stack, unsigned int line_num)
 	pop(stack, line_num);
 }
 /**
- * div -  Devides the top  element by the second too element of the stack
- * @stack: Head pointer to a doubly linked list
- * @line_num: line number
+ *_div -  Devides the top  element by the second too element of the stack
+ *@stack: Head pointer to a doubly linked list
+ *@line_num: line number
  */
 void _div(stack_t **stack, unsigned int line_num)
 {
@@ -56,9 +56,9 @@ void _div(stack_t **stack, unsigned int line_num)
 }
 
 /**
- * mod - Computes the modulus ot the top two elements of the stack
- * @stack: Head pointer to a doubly linked list
- * @line_num: line number
+ *mod - Computes the modulus ot the top two elements of the stack
+ *@stack: Head pointer to a doubly linked list
+ *@line_num: line number
  */
 void mod(stack_t **stack, unsigned int line_num)
 {
@@ -79,9 +79,9 @@ void mod(stack_t **stack, unsigned int line_num)
 }
 
 /**
- * mul - Multiply the top two elements of the stack
- * @stack: Head pointer to a doubly linked list
- * @line_num: line number
+ *mul - Multiply the top two elements of the stack
+ *@stack: Head pointer to a doubly linked list
+ *@line_num: line number
  */
 void mul(stack_t **stack, unsigned int line_num)
 {

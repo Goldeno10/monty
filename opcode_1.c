@@ -2,7 +2,6 @@
 
 /**
  * push - pushes an element to the stack
- *
  * @stack: head of the linked list
  * @line_num: line number
  * Return: no return
@@ -64,10 +63,10 @@ void pall(stack_t **stack, unsigned int line_num)
 }
 
 /**
- * pint - prints the value at the top of the stack
- * @stack: head of the linked list
- * @line_num: line number
- * Return: no return
+ *pint - prints the value at the top of the stack
+ *@stack: head of the linked list
+ *@line_num: line number
+ *Return: no return
  */
 void pint(stack_t **stack, unsigned int line_num)
 {
@@ -81,10 +80,8 @@ void pint(stack_t **stack, unsigned int line_num)
 	}
 	/* navigating to the start node if node is not null*/
 	if (h)
-	{
 		while (h->prev)
 			h = h->next;
-	}
 	printf("%d\n", (*stack)->n);
 }
 /**
@@ -102,8 +99,8 @@ void pop(stack_t **stack, unsigned int line_num)
 		exit(EXIT_FAILURE);
 	}
 	if (del)
-                while (del->prev)
-                        del = del->prev;
+		while (del->prev)
+			del = del->prev;
 	del->next->prev = NULL;
 	*stack = del->next;
 	free(del);
