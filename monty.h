@@ -52,6 +52,11 @@ void pint(stack_t **stack, unsigned int line_num);
 void pop(stack_t **stack, unsigned int line_num);
 void swap(stack_t **stack, unsigned int line_num);
 void add(stack_t **stack, unsigned int line_num);
+void mul(stack_t **stack, unsigned int line_num);
+void _div(stack_t **stack, unsigned int line_num);
+void mod(stack_t **stack, unsigned int line_num);
+void sub(stack_t **stack, unsigned int line_num);
+void nop(stack_t **stack, unsigned int line_n);
 /* doubly linked list functions */
 stack_t *add_dnodeint_end(stack_t **head, const int n);
 stack_t *add_dnodeint(stack_t **head, const int n);

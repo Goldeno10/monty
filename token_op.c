@@ -40,6 +40,11 @@ void (*get_opcode(char *code))(stack_t **stack, unsigned int line_num)
 		{"pop", pop},
 		{"add", add},
 		{"swap", swap},
+		{"sub", sub},
+		{"mul", mul},
+		{"mod", mod},
+		{"div", _div},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 	i = 0;
