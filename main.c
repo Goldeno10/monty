@@ -18,5 +18,3 @@ int main(int argc, char **argv)
 	_file_op(argv[1]);
 	free_stack(head);
 	return (0);
-}
-

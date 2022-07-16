@@ -8,22 +8,24 @@
 */
 char **_tokenizer(char *lineptr, char **tokens)
 {
-	char delim[] = " \t";
+	char delim[] = " \t\n";
 	char *token;
 	int i = 0;
+
+/*	tokens = malloc(sizeof(char *) * strlen(lineptr));*/
+
 
 	token = strtok(lineptr, delim);
 	while (token != NULL && i < 2)
 	{
-		tokens[i] = token;
+		tokens[i++] = token;
 		token = strtok(NULL, delim);
-		i++;
 	}
 	tokens[i] = NULL;
 	if (tokens[0] == NULL)
 		return (NULL);
-	if (strncmp(tokens[0], "#", 1) == 0)
-		tokens[0] = "nop";
+/*	if (strncmp(tokens[0], "#", 1) == 0)
+		tokens[0] = "nop"; */
 	return (tokens);
 }
 
@@ -45,6 +47,7 @@ void (*get_opcode(char *code))(stack_t **stack, unsigned int line_num)
 		{"add", _add},
 		{NULL, NULL}
 	};
+	i = 0;
 	while (ops[i].opcode)
 	{
 		if (strcmp(code, ops[i].opcode) == 0)

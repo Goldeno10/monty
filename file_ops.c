@@ -7,8 +7,9 @@ void _file_op(char *filename)
 	void (*f)(stack_t **stack, unsigned int line_number);
 	char *lineptr = NULL;/* line Buffer */
 	size_t n = 0; /*line buffer size */
+	ssize_t nread;
 	int file_status, line_num = 0;
-	char  *tokens[4096];/*[1024];*/
+	char  **tokens = NULL;/*[1024];*/
 	FILE *stream;
 
 	/*check file status */
@@ -26,8 +27,9 @@ void _file_op(char *filename)
 		exit(EXIT_FAILURE);
 	}
 
-	while (getline(&lineptr, &n, stream) != -1)
+	while ((nread = getline(&lineptr, &n, stream)) != -1)
 	{
+		tokens = malloc(sizeof(char) * nread);
 		line_num++;
 		_tokenizer(lineptr, tokens);
 		f = get_opcode(tokens[0]);

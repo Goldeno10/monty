@@ -7,20 +7,21 @@
 */
 void check_arg(unsigned int line_num)
 {
-	int i;
+	int i = 0;
 
 	if (!arg)
 	{
 		dprintf(2, "L%d: usage: push integer\n", line_num);
 		exit(EXIT_FAILURE);
 	}
-	for (i = 0; arg[i] != '\0'; i++)
+	while (arg[i] != '\0')
 	{
-		if (!isdigit(arg[i]) && arg[i] != '-')
+		if (isdigit(arg[i]))
 		{
-			dprintf(2, " 2L%d: usage: push integer\n", line_num);
+			dprintf(2, "%i  2L%d: usage: push integer\n", arg[i], line_num);
 			exit(EXIT_FAILURE);
 		}
+		i++;
 	}
 }
 
