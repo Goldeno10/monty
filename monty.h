@@ -39,19 +39,19 @@ typedef struct instruction_s
 
 extern stack_t *head;
 extern char *arg;
-char *_strdup(char *s);
+
+
 void (*get_opcode(char *opcode))(stack_t **stack, unsigned int line_num);
 /*char **_tokenize(char *line, char **arr);*/
-char **_tokenizer(char *line, char **tokens);
-int _len(char **token);
-stack_t *create_node(int n);
+void tok_arr(char *lnptr, char *tokens[]);
+void check_arg(unsigned int line_num);
 /* opcode_instructuions*/
-void _push(stack_t **stack, unsigned int line_num);
-void _pall(stack_t **stack, unsigned int line_num);
-void _pint(stack_t **stack, unsigned int line_num);
-void _pop(stack_t **stack, unsigned int line_num);
-void _swap(stack_t **stack, unsigned int line_num);
-void _add(stack_t **stack, unsigned int line_num);
+void push(stack_t **stack, unsigned int line_num);
+void pall(stack_t **stack, unsigned int line_num);
+void pint(stack_t **stack, unsigned int line_num);
+void pop(stack_t **stack, unsigned int line_num);
+void swap(stack_t **stack, unsigned int line_num);
+void add(stack_t **stack, unsigned int line_num);
 /* doubly linked list functions */
 stack_t *add_dnodeint_end(stack_t **head, const int n);
 stack_t *add_dnodeint(stack_t **head, const int n);
@@ -59,6 +59,6 @@ size_t print_dlistint(stack_t *h);
 void free_stack(stack_t *head);
 
 /* file op functions */
-void _file_op(char *filename);
+void file_op(char *filename);
 
 #endif /* #endif _MONTY_H */

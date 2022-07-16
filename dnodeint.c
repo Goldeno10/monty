@@ -35,7 +35,7 @@ stack_t *add_dnodeint_end(stack_t **head, int n)
 }
 
 /**
-*free_dlistint - frees a dlistint_t list.
+*free_stack - frees a dlistint_t list.
 *@head: Head pointer to list to be freed
 *Return: Nothing
 */

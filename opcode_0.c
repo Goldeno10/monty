@@ -1,39 +1,13 @@
 #include "monty.h"
-/*
-*
-*
-*
-*
-*/
-void check_arg(unsigned int line_num)
-{
-	int i = 0;
-
-	if (!arg)
-	{
-		dprintf(2, "L%d: usage: push integer\n", line_num);
-		exit(EXIT_FAILURE);
-	}
-	while (arg[i] != '\0')
-	{
-		if (isdigit(arg[i]))
-		{
-			dprintf(2, "%i  2L%d: usage: push integer\n", arg[i], line_num);
-			exit(EXIT_FAILURE);
-		}
-		i++;
-	}
-}
-
 
 /**
- * _push - pushes an element to the stack
+ * push - pushes an element to the stack
  *
  * @stack: head of the linked list
  * @line_num: line number
  * Return: no return
  */
-void _push(stack_t **stack, unsigned int line_num)
+void push(stack_t **stack, unsigned int line_num)
 {
 	int n;
 	stack_t *new;
@@ -56,20 +30,17 @@ void _push(stack_t **stack, unsigned int line_num)
 		(*stack)->prev = new;
 
 	*stack = new;
-
-/*	return (new); */
 }
 /**
- * _pall - prints all values on the stack
- *
+ * pall - prints all values on the stack
  * @stack: head of the linked list
  * @line_num: line numbers
  * Return: no return
  */
-void _pall(stack_t **stack, unsigned int line_num)
+void pall(stack_t **stack, unsigned int line_num)
 {
 	stack_t *c = *stack;
-	(void)line_num;;
+	(void)line_num;
 
 	if (!stack)
 	{
@@ -77,17 +48,16 @@ void _pall(stack_t **stack, unsigned int line_num)
 		exit(EXIT_FAILURE);
 	}
 	for (; c; c = c->next)
-		dprintf(2, "%d\n", c->n);;
+		dprintf(2, "%d\n", c->n);
 }
 
 /**
- * _pint - prints the value at the top of the stack
- *
- * @doubly: head of the linked list
+ * pint - prints the value at the top of the stack
+ * @stack: head of the linked list
  * @line_num: line number
  * Return: no return
  */
-void _pint(stack_t **stack, unsigned int line_num)
+void pint(stack_t **stack, unsigned int line_num)
 {
 	stack_t *h = *stack;
 	(void) line_num;
@@ -104,7 +74,7 @@ void _pint(stack_t **stack, unsigned int line_num)
  * @stack: first node of linked list
  * @line_num: line number
  */
-void _pop(stack_t **stack, unsigned int line_num)
+void pop(stack_t **stack, unsigned int line_num)
 {
 	stack_t *del = *stack;
 
@@ -122,7 +92,7 @@ void _pop(stack_t **stack, unsigned int line_num)
   * @stack: head node of linked list
   * @line_num: line number
   */
-void _swap(stack_t **stack, unsigned int line_num)
+void swap(stack_t **stack, unsigned int line_num)
 {
 	int x = (*stack)->n;
 

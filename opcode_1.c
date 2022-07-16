@@ -5,7 +5,7 @@
   * @stack: Head of doubly linked list
   * @line_num: line number
   */
-void _add(stack_t **stack, unsigned int line_num)
+void add(stack_t **stack, unsigned int line_num)
 {
 	if (!(*stack) || !(*stack)->next)
 	{
@@ -14,5 +14,5 @@ void _add(stack_t **stack, unsigned int line_num)
 		exit(EXIT_FAILURE);
 	}
 	(*stack)->next->n += (*stack)->n;
-	_pop(stack, line_num);
+	pop(stack, line_num);
 }
